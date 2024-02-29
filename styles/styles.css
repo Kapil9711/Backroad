@@ -65,7 +65,7 @@ global styles
 =======
 */
 
-*{
+*,*::before{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -105,13 +105,13 @@ h1{
     font-size: 2.9rem;
 }
 h2{
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 h3{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 h4{
-    font-size: 1rem;
+    font-size: .867rem;
 }
 p{
     margin-bottom: 32px;
@@ -123,7 +123,7 @@ p{
         font-size:4rem;
     }
     h2{
-        font-size:3rem;
+        font-size:2.7rem;
     }
     h3{
         font-size:1.75rem;
@@ -167,6 +167,13 @@ global classes
     max-width: 800px;
 }
 
+h2{
+    text-transform: uppercase;
+}
+ h2 span{
+    color:var(--clr-primary-5);
+}
+
 /* 
 =======
 header
@@ -185,9 +192,11 @@ navbar
 
 header .navbar{
     height: 60px;
+    z-index: 999999;
     width:100%;
     position:fixed;
     background-color: var(--clr-white);
+    box-shadow: 0 10px 10px hsl(var(--grey-hue) 61% 16% /.15) ;
 }
 
 .navbar .content-wrapper{
@@ -315,3 +324,150 @@ hero
     background-position: center;
    }
 }
+
+
+/* 
+=======
+main
+=======
+*/
+
+#main{
+    isolation: isolate;
+}
+
+/* 
+=======
+ section about
+=======
+*/
+
+.about{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 72px 12px;
+    position: relative;
+}
+
+
+.about-img-wrapper{
+    max-width: 570px;
+    margin:32px 0;
+}
+.about-content-wrapper{
+    max-width: 570px;
+}
+.about-btn{
+    width: fit-content;
+    padding: 4px 16px;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+
+/* min desktop */
+@media (min-width:1100px){
+    .about__img-and-content-wrapper{
+        display: flex;
+        justify-content: space-evenly;  
+    }
+    .about-content-wrapper{
+        margin-left:60px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+}
+
+/* for outline */
+
+@media (min-width:1250px){
+    .about-img-wrapper::before{
+        content: '';
+        position: absolute ;
+        height: 100%;
+        width: 100%;
+        border: 10px solid var(--clr-primary-5);
+        top: -32px;
+        left:-32px;
+        display: block;
+    }
+     .about-img-wrapper{
+        position: relative;
+    } 
+    .about-img-wrapper img{
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+/* 
+=========
+servicess
+========
+*/
+*{
+    border:solid;
+}
+#services{
+    background: var(--clr-grey-10);
+    padding:60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    isolation: isolate;
+}
+#services h2{
+    margin-bottom:60px;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    
+}
+.content{
+    max-width: 400px;
+}
+.services-wrapper{
+    padding: 0 10px;
+    text-align: center;
+}
+.services-wrapper p{
+    padding: 0 20px;
+}
+
+.services-wrapper i{
+    background: linear-gradient(to bottom right,var(--clr-primary-5),var(--clr-primary-6));
+    font-size: 30px;
+    padding: 16px 12px;
+    color: var(--clr-primary-1);
+    margin-bottom: 16px;
+}
+
+/* max tablet and so on */
+
+@media (min-width:1100px){
+    .services-wrapper{
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+    }   
+    .content{
+        display: flex;
+    }
+    .services-wrapper i{
+      margin-right:16px;
+      padding:20px 20px;
+    }
+    .services-wrapper p{
+        padding:0;
+    }
+    
+    
+}
+
+
+
