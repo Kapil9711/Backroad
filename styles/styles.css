@@ -542,4 +542,81 @@ servicess
 }
 
 
+/* 
+=======
+features
+=======
+*/
+*{
+    /* border:solid; */
+}
+#features{
+    padding:60px 0;
+}
 
+#features h2{
+    text-align: center;
+    margin-bottom:50px;
+}
+
+#features .content-wrapper{
+    padding: 16px 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+.common-container{
+    box-shadow: 0 10px 10px hsl(0deg 0% 0% /.2);
+    transition: all .3s ease-in-out;
+    margin-bottom: 40px ;
+}
+
+@media (pointer: fine){
+    .common-container:hover{
+        transform: scale(1.02);
+    }
+}
+.tibet-content-wrapper{
+    padding:16px;
+    background-color: var(--clr-grey-10);
+}
+.tibet-adventure-prices{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--clr-primary-5);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+.tibet-adventure-prices p{
+    margin: 0;
+    color: inherit;
+}
+
+
+@media (min-width:850px){
+    #features .content-wrapper{
+        max-width: 1300px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .common-container{
+        max-width: 350px;
+        margin-right: 60px;
+    }
+   
+}
+@media (min-width:1200px){
+    #features .content-wrapper{
+        padding:0 60px;
+        max-width: 1300px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    .common-container{
+        max-width: 350px;
+        /* margin-right: 60px; */
+        margin:  0;
+        margin-bottom: 40px;
+    }
+}
