@@ -76,6 +76,9 @@ global styles
 ::-moz-selection { color: white;  background: var(--clr-primary-4); }
 ::selection      { color: white;  background: var(--clr-primary-4); } 
 
+html{
+    /* scroll-behavior: smooth; */
+}
 
 html,body{
     height:100%;
@@ -143,6 +146,7 @@ p{
     h1,h2,h3,h4{
         line-height: 1;
     }
+    
 }
 
 /* 
@@ -161,6 +165,7 @@ global classes
     border:2px solid transparent;
     cursor:pointer;
     box-shadow: 0px 1px 3px hsl(0 0% 0% /.2);
+    position: relative;
    
 }
 
@@ -170,7 +175,7 @@ global classes
     transform: translateY(-3px);
 }
 
-@media (min-width:850px){
+@media (pointer: fine){
 .btn::before{
     content: '';
     display: inline-block;
@@ -560,7 +565,7 @@ features
 }
 
 #features .content-wrapper{
-    padding: 16px 8px;
+    padding: 16px 10px;
     display: flex;
     justify-content: center;
     flex-wrap:wrap;
@@ -585,12 +590,25 @@ features
     justify-content: space-between;
     align-items: center;
     color: var(--clr-primary-5);
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: capitalize;
 }
 .tibet-adventure-prices p{
     margin: 0;
     color: inherit;
+}
+.features-btn-wrapper{
+    text-align: center;
+}
+.features-btn{
+    padding: 8px 16px;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    text-align: center;
+    
+}
+.features-btn::before{
+    background-color: var(--clr-primary-5);
 }
 
 
@@ -618,5 +636,83 @@ features
         /* margin-right: 60px; */
         margin:  0;
         margin-bottom: 40px;
+    }
+    .tibet-content-wrapper p{
+        font-size:1rem;
+    }
+}
+
+/* 
+=======
+section gallery
+=======
+*/
+*{
+    /* border:solid; */
+  }
+
+#gallery{
+    background-color: var(--clr-primary-5);
+}
+.gallery-common-container{
+    min-height: 300px;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.gallery-common-container img{
+    height: 100%;
+    display: inline-block;
+    background-size: cover;
+}
+.form-container{
+    padding: 0 8px;   
+    color: white;
+}
+.form-container p{
+    color:var(--clr-primary-9);
+}
+.form{
+    display: flex;
+    justify-content: space-between;
+}
+.form input{
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 8px 8px;
+      flex-grow: 2;
+}
+::placeholder{
+    letter-spacing: 4px;
+}
+.gallery-btn{
+    display: inline-block;
+    background-color: var(--clr-primary-7);
+    letter-spacing: 4px;
+    color: var(--clr-grey-1);
+    font-size: 1rem;
+    margin-left: 10px;
+
+}
+@media (pointer: fine){
+
+.gallery-btn:hover{
+   background-color: var(--clr-primary-1);
+   color: var(--clr-primary-5);
+}
+.gallery-btn::before{
+  background-color: var(--clr-primary-7);
+}
+
+}
+
+@media (min-width:850px){
+    .img-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .img-container{
+        max-width: Calc(100% / 4);
     }
 }

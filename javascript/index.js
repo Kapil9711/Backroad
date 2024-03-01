@@ -35,3 +35,29 @@ window.addEventListener("scroll", () => {
     contentWrapper.classList.remove("originate");
   }
 });
+
+// const galleryImgWrapper = document.querySelector("gallery ");
+
+// applying smooth scrolling
+
+const anchorBtn = document.querySelectorAll("body a");
+
+for (let link of anchorBtn) {
+  link.addEventListener("click", smoothScroling);
+}
+
+function smoothScroling(event) {
+  event.preventDefault();
+  console.log(event, this);
+  const href = this.getAttribute("href");
+  const offSetTop = document.querySelector(href).offsetTop;
+
+  scroll({
+    top: offSetTop,
+    behavior: "smooth",
+  });
+
+  // document.querySelector(href).scrollIntoView({
+  //   bahavior: "smooth",
+  // });
+}
