@@ -640,6 +640,23 @@ features
     .tibet-content-wrapper p{
         font-size:1rem;
     }
+    
+        .common-container{
+            transition: all .4s ease-in-out;
+            position: relative;
+        }
+        .common-container:nth-of-type(1){
+           
+             left: -1000px;
+    
+        }
+        .common-container:nth-of-type(3){
+          
+          left: 1000px;
+        }
+        #features .originate{
+            left: 0;
+    }
 }
 
 /* 
@@ -708,6 +725,13 @@ section gallery
 }
 
 @media (min-width:850px){
+    .gallery-common-container{
+        text-align: center;
+    }
+    .form{
+        max-width: 600px;
+        margin: 0 auto;
+    }
     .img-wrapper{
         display: flex;
         flex-wrap: wrap;
@@ -716,3 +740,4 @@ section gallery
         max-width: Calc(100% / 4);
     }
 }
+
